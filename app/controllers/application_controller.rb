@@ -42,9 +42,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/login" do
-    # if params[:username] == "" || params[:password] == ""
-    #   redirect '/failure'
-    # end
+    if params[:username] == "" || params[:password] == ""
+      redirect '/failure'
+    end
     
     # if logged_in?
     #   session[:user_id] = current_user
