@@ -21,8 +21,8 @@ class ApplicationController < Sinatra::Base
       redirect '/failure'
     else
     
-    @current_user = User.create(username: params[:username], password: params[:password])
-      if @current_user.save    
+    @user = User.create(username: params[:username], password: params[:password])
+      if @user.save    
         session[:user_id] = @user.id
         erb :'/login'      
       else
